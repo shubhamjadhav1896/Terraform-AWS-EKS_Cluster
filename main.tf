@@ -87,7 +87,6 @@ resource "aws_security_group_rule" "cluster_outbound" {
 #EKS NODE GROUPS
 resource "aws_eks_node_group" "eks-node-group" {
   cluster_name    = aws_eks_cluster.eks-cluster.name
-  #node_group_name = shub-eks-node-group
   node_role_arn   = aws_iam_role.eks-node-role.arn
   subnet_ids      = module.networking.private_subnets[*].id
 
